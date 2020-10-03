@@ -49,7 +49,7 @@ Import $liberia as $nickname.
 import os
 import pandas as pd
 import numpy as np
-import matplotlib.pyploy as plt
+import matplotlib.pyplot as plt
 
 #Listas
 name = ['Yaling','Sofia','Maria','Pablo', 'Inés'] #En python lista, en pandas series.

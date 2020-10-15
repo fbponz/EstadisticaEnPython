@@ -63,3 +63,27 @@ Los brackets -> nos sirven para buscar como diccionario.
 rentals_weather_2011 = rentals_weather_2011.rename(columns={'dteday_x':'dteday'})
 
 plt.scatter(rentals_weather_2011.temp_celsius, rentals_weather_2011.cnt)
+
+rentals_weather_2012 = pd.read_csv('rentals_weather_2012.csv', sep=';', decimal=',')
+
+rentals_weather_2012.shape
+rentals_weather_2012.head()
+
+rentals_weather_11_12 = rentals_weather_2011.append(rentals_weather_2012, ignore_index=True)
+
+rentals_weather_11_12.shape
+rentals_weather_11_12.head()
+rentals_weather_11_12.tail()
+
+"""
+Si quisieramos reordenar las columnas despues de hacer un append podemos ejecutar
+el siguiente comando.
+"""
+rentals_weather_11_12 = rentals_weather_11_12[rentals_weather_2011.columns]
+
+orden = rentals_weather_2011.columns
+
+# QC OK 2020_10_15
+
+#para guardar podemos hacerlo de la siguiente forma
+rentals_weather_11_12.to_csv("rentals2011_2012.csv")

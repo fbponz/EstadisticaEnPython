@@ -44,7 +44,8 @@ def set_title_and_labels(title, xlabel, ylabel):
     plt.xlabel(xlabel)
 
 
-def plot_hist(data_in, edgeColor, ticks, title, yLabel, xLabel, mean_activated, mean, mean_color, deviation_activated, deviation, deviation_color_a, deviation_color_b):
+
+def plot_hist(data_in, edgeColor, ticks, title, yLabel, xLabel, mean_activated, mean, mean_color, deviation_activated, deviation, deviation_color_a, deviation_color_b, text_pos_x, text_pos_y, text_box_string, props):
     plt.hist(x, edgecolor=edgeColor)
     plt.xticks(ticks)
     set_title_and_labels(title, xLabel, yLabel)
@@ -55,6 +56,7 @@ def plot_hist(data_in, edgeColor, ticks, title, yLabel, xLabel, mean_activated, 
         plt.axvline(x=mean+deviation, linewidth=1, linestyle = 'dashed', color= deviation_color_b, label='+sd')
     if mean_activated == True or deviation_activated == True:
         plt.legend()
+    plt.text(text_pos_y, text_pos_x, text_box_string, bbox=props)    
     plt.show()
     
 def plot_bar(data_in, data_list, edgeColor, title, yLabel, xLabel):
@@ -72,8 +74,10 @@ ticks=np.arange(0,10000,1000)
 graph_title = 'Figure 1. Daily Bicycle rentals in Washington DC' '\n' 'by Capital bikeshare. 2011 - 2012'
 y_label = 'Frequency'
 x_label = 'Number of rented bicycles'
+box_string = '$\mathrm{Mean}=%.1f$\n$\mathrm{S.D.}=%.1f$\n$\mathrm{n}=%.0f$'%(m, sd, n)
+props = dict(boxstyle='round', facecolor='white', lw=0.5)
 
-plot_hist(x, 'black', ticks, graph_title, y_label, x_label, True, m, "red", True, sd, "green", "brown")
+plot_hist(x, 'black', ticks, graph_title, y_label, x_label, True, m, "red", True, sd, "green", "brown", 6500, 110, box_string, props)
 
 #textstr='Hola'
 #plt.text('Rainy', 115, textstr)

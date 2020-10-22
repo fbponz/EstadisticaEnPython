@@ -46,7 +46,7 @@ def set_title_and_labels(title, xlabel, ylabel):
 
 
 def plot_hist(data_in, edgeColor, ticks, title, yLabel, xLabel, mean_activated, mean, mean_color, deviation_activated, deviation, deviation_color_a, deviation_color_b, text_pos_x, text_pos_y, text_box_string, props):
-    plt.hist(x, edgecolor=edgeColor)
+    plt.hist(data_in, edgecolor=edgeColor)
     plt.xticks(ticks)
     set_title_and_labels(title, xLabel, yLabel)
     if mean_activated == True:

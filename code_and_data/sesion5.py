@@ -106,5 +106,9 @@ Aplicado sobre un dataframe, quitamos tantas lineas como hacen falta.
 print(wbr_ue.shape)
 print(wbr_ue2.shape)
 
+#devuelve true o false en funcion de si es un caso duplicado o no.
 wbr_ue.drop_duplicates()
-res = pd.concat([wbr_ue,wbr_ue.drop_duplicates()]).drop_duplicates(keep=False)    
+res = pd.concat([wbr_ue,wbr_ue.drop_duplicates()]).drop_duplicates(keep=False) 
+
+#otra forma de eliminar los duplicados.
+wbr_ue.drop_duplicates('instant', keep='last')   

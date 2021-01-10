@@ -11,35 +11,74 @@ Created on Thu Jan  7 21:16:40 2021
 
 import PySimpleGUI as sg
 
-class calculadora: 
-    def __init__(self):
-        layout = [[sg.Text('Calculadora EDEM', size=(40, 1), justification='center')],
-          [sg.Text(text='Numero 1:'), sg.InputText()],
-          [sg.Text(text='Numero 2:'), sg.InputText()],
-          [sg.Button('Sumar', key='sumar'), sg.Button('Restar', key = 'restar'), sg.Button('Multiplicar', key = 'multiplicar'), sg.Button('Dividir', key = 'dividir')]
-          ]
-        self.window = sg.Window('Calculadora FdBPonz', location=(800, 400))
-        self.window.Layout(layout).Finalize()
-        while True:
-            event, values = self.window.Read()
-            if event == 'Exit' or event is None:
-                sys.exit()
-                break
-            if event == 'sumar':
-                self.sumar(values[0], values[1])
-            if event == 'restar':
-                self.restar(values[0], values[1])
-            if event == 'multiplicar':
-                self.multiplicar(values[0], values[1])
-            if event == 'dividir':
-                self.dividir(values[0], values[1])
-    def sumar(self,numero_a, numero_b):
-        sg.Popup('resutaldo: '+str((float(numero_a)+float(numero_b))))
-    def restar(self,numero_a, numero_b):
-        sg.Popup('resutaldo: '+str((float(numero_a)-float(numero_b))))
-    def multiplicar(self,numero_a, numero_b):
-        sg.Popup('resutaldo: '+str((float(numero_a)*float(numero_b))))
-    def dividir(self,numero_a, numero_b):
-        sg.Popup('resutaldo: '+str((float(numero_a)/float(numero_b))))
-  
-interfaz_cal = calculadora()
+memA = 0.0
+memB = 0.0
+resultado = 0.0
+
+layout = [[sg.Text('Calculadora EDEM', size=(40, 1), justification='center')],
+  [sg.Text(text='Para gastar los valores guardos en memoria MemA, MemB, PrevResult')],
+  [sg.Text(text='Valor guardado en MemA '),sg.Text(text=str(memA),size=(15,1), key='LMemA')], 
+  [sg.Text(text='Valor guardado en MemB '),sg.Text(text=str(memB),size=(15,1), key='LMemB')],         
+  [sg.Text(text='Numero 1:'), sg.InputText(),sg.Button('MemA', key = 'memA')],
+  [sg.Text(text='Numero 2:'), sg.InputText(),sg.Button('MemB', key = 'memB')],
+  [sg.Text(text='Resultado:'),sg.Text(size=(15,1), key='-RESULTADO-')], 
+  [sg.Button('Sumar', key='sumar'), sg.Button('Restar', key = 'restar'), sg.Button('Multiplicar', key = 'multiplicar'), sg.Button('Dividir', key = 'dividir')]
+  ]
+window = sg.Window('Calculadora FdBPonz', location=(800, 400))
+window.Layout(layout).Finalize()
+resultado = 0.0
+
+while True:
+    event, values = window.Read()
+
+    if('MemA' == values[0]):
+        tempA = memA
+    elif('MemB' == values[0]):
+        tempA = memB
+    elif('PrevResult'==values[0]):
+        tempA = resultado
+    else:
+        tempA = values[0]
+        
+    if('MemA' == values[1]):
+        tempB = memA
+    elif('MemB' == values[1]):
+        tempB = memB
+    elif('PrevResult'==values[1]):
+        tempB = resultado
+    else:
+        tempB = values[1]
+        
+    if event == 'Exit' or event is None:
+        break
+    if event == 'sumar':
+        resultado = (float(tempA) + float(tempB))
+        window['-RESULTADO-'].update(str(resultado))
+    
+    if event == 'restar':
+        resultado = (float(tempA) - float(tempB))
+        window['-RESULTADO-'].update(str(resultado))
+        
+    if event == 'multiplicar':
+        resultado = (float(tempA) * float(tempB))
+        window['-RESULTADO-'].update(str(resultado))
+        
+    if event == 'dividir':
+        resultado = (float(tempA) / float(tempB))
+        window['-RESULTADO-'].update(str(resultado))
+        
+    if event == 'memA':
+        memA = float(values[0])
+        window['LMemA'].update(str(memA))
+        
+        
+    if event == 'memB':
+        memB = float(values[1])
+        window['LMemB'].update(str(memB))
+
+        
+    if event == sg.WIN_CLOSED:
+        break
+window.Close()
+
+

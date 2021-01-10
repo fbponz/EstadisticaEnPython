@@ -15,13 +15,13 @@ memA = 0.0
 memB = 0.0
 resultado = 0.0
 
-layout = [[sg.Text('Calculadora EDEM', size=(40, 1), justification='center')],
+layout = [[sg.Text('Calculadora EDEM-PROGRAMACIÓN ESTADÍSTICA CON PYTHON', size=(64, 1), justification='center')],
   [sg.Text(text='Para gastar los valores guardos en memoria MemA, MemB, PrevResult')],
   [sg.Text(text='Valor guardado en MemA '),sg.Text(text=str(memA),size=(15,1), key='LMemA')], 
   [sg.Text(text='Valor guardado en MemB '),sg.Text(text=str(memB),size=(15,1), key='LMemB')],         
   [sg.Text(text='Numero 1:'), sg.InputText(),sg.Button('MemA', key = 'memA')],
   [sg.Text(text='Numero 2:'), sg.InputText(),sg.Button('MemB', key = 'memB')],
-  [sg.Text(text='Resultado:'),sg.Text(size=(15,1), key='-RESULTADO-')], 
+  [sg.Text(text='Resultado:'),sg.Text(size=(20,1), key='-RESULTADO-')], 
   [sg.Button('Sumar', key='sumar'), sg.Button('Restar', key = 'restar'), sg.Button('Multiplicar', key = 'multiplicar'), sg.Button('Dividir', key = 'dividir')]
   ]
 window = sg.Window('Calculadora FdBPonz', location=(800, 400))

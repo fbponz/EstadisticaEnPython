@@ -74,7 +74,7 @@ while keep_running:
         ##Limpiar consola
         if os.name == "posix":
             os.system ("clear")
-        elif (Sumar(os.name == "ce") or (os.name == "nt") or (os.name == "dos")):
+        elif ((os.name == "ce") or (os.name == "nt") or (os.name == "dos")):
             os.system ("cls")
         print("Resultado de " + operacion + ": Entre " + str(numero_a) + " con " + str(numero_b) + " resultado: " + str(resultado));
     

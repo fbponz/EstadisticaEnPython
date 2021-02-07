@@ -2,4 +2,4 @@
 
 ### Master en Data Analytics para la Empresa
 
-#### Asignatura Programación Estadística con PYTHON
+#### Asignatura Programación Estadística con Python

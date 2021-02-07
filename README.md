@@ -9,50 +9,28 @@
 
 #### Contenidos:
 
-##### Sesion 1: 
-Introducción a pandas y python.
+##### Sesión:
+- 1 y 2: Introducción a pandas y python
 
-##### Sesion 2: 
-Introducción a pandas y python.
+- 3: Describing nominal data
 
-##### Sesion 3: 
-Describing nominal data.
+- 4: Describing quantitative data
 
-##### Sesion 4: 
-Describing quantitative data.
+- 5: Subsetting data & avoiding artifacts
 
-##### Sesion 5: 
-Subsetting data & avoiding artifacts.
+- 6: Data transformation
 
-##### Sesion 6: 
-Data transformation.
+- 7: Mean comparisons
 
-##### Sesion 7: 
-Mean comparisons.
+- 8: Percentage Comparison: Hypothesis testing & graphic methods
 
-##### Sesion 8: 
-Percentage Comparison: Hypothesis testing & graphic methods.
+- 9: Correlation: Hypothesis testing & graphic methods
 
-##### Sesion 9: 
-Correlation: Hypothesis testing & graphic methods.
+- 10: Regression I: Hypothesis testing & predictions + graphic methods
 
-##### Sesion 10: 
-Regression I: Hypothesis testing & predictions + graphic methods.
+- 11, 12, 13, 14: Regression II: Multiple linear regression
 
-##### Sesion 11: 
-Regression II: Multiple linear regression.
-
-##### Sesion 12: 
-Regression II: Multiple linear regression.
-
-##### Sesion 13: 
-Regression II: Multiple linear regression.
-
-##### Sesion 14: 
-Regression II: Multiple linear regression.
-
-##### Sesion 15: 
-Flow control, functions & objects: Loops & Conditional execution + Functions + Objects
+- 15, 16: Flow control, functions & objects: Loops & Conditional execution + Functions + Objects
 
 ##### Tarea Final:
 Implementar una calculadora, en este caso se han implementado dos calculadoras una por linea de comando y otra con interfaz

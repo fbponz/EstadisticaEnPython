@@ -4,7 +4,7 @@
 
 #### Asignatura Programación Estadística con Python
 
-- Alumno:  [Fco de Borja Ponz](https://github.com/fbponz)
-- Docente: [Alberto Sanz]
+- Alumno:  Fco de Borja Ponz
+- Docente: Alberto Sanz
 
 #### Contenidos:
